@@ -3,4 +3,5 @@
 ## It has Maven project Structure.
 
 	### JSP & Servlet used for Frontend
-	### MySQL used for backend
+	### Java used for backend
+	### MySQL for database purposes
