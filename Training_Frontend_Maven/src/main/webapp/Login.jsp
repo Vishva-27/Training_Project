@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login Page</title>
+<style>
+.active {
+  background-color: #04AA6D;
+}
+</style>
 </head>
 <body>
 <jsp:include page="index.jsp" />
@@ -14,7 +19,7 @@
 <pre>
      User ID   :  <input type="number" name="log_id"><br>
      Password  :  <input type="password" name="log_pass"><br>
-     				<input type="submit" name="Login"> <input type="reset" name="reset"><br>
+     				<input type="submit" name="Login" value="Login"> <input type="reset" name="reset"><br>
 </pre>
      
 </form>

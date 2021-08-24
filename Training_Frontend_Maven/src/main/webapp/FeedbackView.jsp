@@ -8,32 +8,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin Page</title>
-<style>
-
-th {
-  background-color: #04AA6D;
-  color: white;
-}
-</style>
+<title>Feedback Page</title>
 </head>
 <body>
-<h2>Welcome to Admin Page</h2>
-<!-- <a href="Course.jsp">Enroll in Course!</a> -->
- <%
+<jsp:include page="Admin.jsp" />
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback</h2>
+<hr>
+<%
  				DataSource datasource= DataSourceUtil.dataSource();
                 Connection connection = datasource.getConnection();
                 Statement statement = connection.createStatement();
                 ResultSet resultset = 
-                		statement.executeQuery("select * from course");
+                		statement.executeQuery("select * from feedback");
  %>
- <TABLE BORDER="1">
+ <div>
+ <div style="margin-left:200px">
+ <TABLE BORDER="1" style="width:100%">
            <TR>
-                 <TH>Course ID</TH>
-                 <TH>Course Name</TH>
-                 <TH>Course description</TH>
-                 <TH>Fees</TH>
-                 <TH>Resources</TH>
+                 <TH>User ID</TH>
+                 <TH>Name</TH>
+                 <TH>Email ID</TH>
+                 <TH>Feedback ID</TH>
+                 <TH>Feedback</TH>
           </TR>
            <% while(resultset.next()){ %>
            <TR>
@@ -45,11 +41,7 @@ th {
           </TR>
            <% } %>
  </TABLE>
-<ul>
-<li><a href="Course.jsp">Add a new course</a></li>
-<li><a href="ContactView.jsp">View Contacts of all Learners</a></li>
-<li><a href="FeedbackView.jsp">View Feedbacks Received from all Learners</a></li>
-<li><a href="index.jsp">Logout</a></li>
-</ul>
+ </div>
+ </div>
 </body>
 </html>

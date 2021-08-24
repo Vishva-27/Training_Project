@@ -20,6 +20,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  height:30px;
   background-color: #333;
 }
 
@@ -31,7 +32,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 6px 16px;
   text-decoration: none;
 }
 

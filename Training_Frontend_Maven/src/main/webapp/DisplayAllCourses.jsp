@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
+    <%@ page import="java.sql.*" %>
 <%@ page import="db.DBUtil" %>
 <%@ page import="javax.sql.*" %>
 <%@ page import="Training_Frontend_Controller.DataSourceUtil" %>
@@ -8,25 +8,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Contact List</title>
+<title>All Courses</title>
 </head>
 <body>
-<h2>Contact List</h2>
-<%
+<jsp:include page="Admin.jsp" />
+ <%
  				DataSource datasource= DataSourceUtil.dataSource();
                 Connection connection = datasource.getConnection();
                 Statement statement = connection.createStatement();
                 ResultSet resultset = 
-                		statement.executeQuery("select * from contact");
+                		statement.executeQuery("select * from course");
  %>
- <TABLE BORDER="1">
+ <div>
+ <div style="margin-left:200px">
+ <TABLE BORDER="1" style="width:100%">
            <TR>
-                 <TH>User ID</TH>
-                 <TH>Name</TH>
-                 <TH>Email ID</TH>
-                 <TH>Phone Number</TH>
-                 <TH>Message</TH>
-                 <TH>Contact ID</TH>
+                 <TH>Course ID</TH>
+                 <TH>Course Name</TH>
+                 <TH>Course description</TH>
+                 <TH>Fees</TH>
+                 <TH>Resources</TH>
           </TR>
            <% while(resultset.next()){ %>
            <TR>
@@ -35,10 +36,10 @@
                <TD> <%= resultset.getString(3) %></TD>
                <TD> <%= resultset.getString(4) %></TD>
                <TD> <%= resultset.getString(5) %></TD>
-               <TD> <%= resultset.getString(6) %></TD>
           </TR>
            <% } %>
  </TABLE>
- <a href="Admin.jsp">Back to Dashboard</a>
+ </div>
+ </div>
 </body>
 </html>

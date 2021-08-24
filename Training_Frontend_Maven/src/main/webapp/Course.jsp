@@ -7,18 +7,23 @@
 <title>Course Page</title>
 </head>
 <body>
-<h2>COURSE PAGE</h2>
+<jsp:include page="Admin.jsp" />
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD A COURSE</h2>
 <hr>
+<div>
+ <div style="margin-left:200px">
 <form action="course" method="post">
 <pre>
-     User ID   :  <input type="number" name="cou_id"><br>
-     Name   :  <input type="text" name="cou_name"><br>
+     Course ID       :  <input type="number" name="cou_id"><br>
+     Name          :  <input type="text" name="cou_name"><br>
      Description   :  <input type="text" name="cou_desp"><br>
-     Resources   :  <input type="text" name="cou_resource"><br>
-     Fees   :  <input type="text" name="cou_fees"><br>
+     Resources     :  <input type="text" name="cou_resource"><br>
+     Fees          :  <input type="text" name="cou_fees"><br>
      				<input type="submit" name="SUBMIT"> <input type="reset" name="reset"><br>
 </pre>
      
 </form>
+</div>
+</div>
 </body>
 </html>

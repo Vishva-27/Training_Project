@@ -8,24 +8,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Feedback Page</title>
+<title>Contact List</title>
 </head>
 <body>
-<h2>Feedback</h2>
+<jsp:include page="Admin.jsp" />
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact List</h2>
+<hr>
 <%
  				DataSource datasource= DataSourceUtil.dataSource();
                 Connection connection = datasource.getConnection();
                 Statement statement = connection.createStatement();
                 ResultSet resultset = 
-                		statement.executeQuery("select * from feedback");
+                		statement.executeQuery("select * from contact");
  %>
- <TABLE BORDER="1">
+ <div>
+ <div style="margin-left:200px">
+ <TABLE BORDER="1" style="width:100%">
            <TR>
                  <TH>User ID</TH>
                  <TH>Name</TH>
                  <TH>Email ID</TH>
-                 <TH>Feedback ID</TH>
-                 <TH>Feedback</TH>
+                 <TH>Phone Number</TH>
+                 <TH>Message</TH>
+                 <TH>Contact ID</TH>
           </TR>
            <% while(resultset.next()){ %>
            <TR>
@@ -34,9 +39,11 @@
                <TD> <%= resultset.getString(3) %></TD>
                <TD> <%= resultset.getString(4) %></TD>
                <TD> <%= resultset.getString(5) %></TD>
+               <TD> <%= resultset.getString(6) %></TD>
           </TR>
            <% } %>
  </TABLE>
- <a href="Admin.jsp">Back to Dashboard</a>
+ </div>
+ </div>
 </body>
 </html>
