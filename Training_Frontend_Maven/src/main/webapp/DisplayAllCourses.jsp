@@ -28,6 +28,8 @@
                  <TH>Course description</TH>
                  <TH>Fees</TH>
                  <TH>Resources</TH>
+                 <TH>Update</TH>
+                 <TH>Delete</TH>
           </TR>
            <% while(resultset.next()){ %>
            <TR>
@@ -36,6 +38,8 @@
                <TD> <%= resultset.getString(3) %></TD>
                <TD> <%= resultset.getString(4) %></TD>
                <TD> <%= resultset.getString(5) %></TD>
+               <TD><form action='update' method = 'POST' onsubmit=''> <input type='hidden' name='q' value=<%session.setAttribute("co_id", Integer.parseInt(resultset.getString(1)));%>/><input type='Submit' value='Update'/></form></TD>
+          	   <TD><form action='delete' method = 'POST' onsubmit=''> <input type='hidden' name='q' value=<%session.setAttribute("co_id", Integer.parseInt(resultset.getString(1)));%>/><input type='Submit' value='Delete'/></form></TD>
           </TR>
            <% } %>
  </TABLE>
